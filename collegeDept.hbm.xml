@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ <hibernate-mapping>
+ <class name="bean.CollegeDepartment" >
+ <id name="id"></id>
+ 
+ <property name="name"></property>
+ <property name="salary"></property>
+ <property name="email"></property>
+ 
+ <union-subclass name="bean.ComputerDept" table="ComputerDeptT">
+ <property name="tools"></property>
+ </union-subclass>
+ 
+ <union-subclass name="bean.ElectronicsDept" table="ElectronicDept">
+ <property name="workinghr"></property>
+ </union-subclass>
+ </class>
+ </hibernate-mapping>
